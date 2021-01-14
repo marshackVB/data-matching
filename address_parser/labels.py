@@ -233,19 +233,19 @@ labels = [
           [('1106', 'AddressNumber'), ('ROUTE', 'StreetNamePreType'), ('9W', 'StreetName')],
           [('P', 'USPSBoxType'), ('O', 'USPSBoxType'), ('BOX', 'USPSBoxType'), ('75', 'USPSBoxID')],
           [('46218', 'AddressNumber'), ('I', 'StreetNamePreType'), ('H', 'StreetNamePreType'), ('10', 'StreetName')],
-          [('AddressNumber', '2930'), ('StreetName', 'WATERFRONT'), ('StreetNamePostType', 'PARKWAY')],
-          [('AddressNumber', '843'), ('StreetName', 'SEBASTIAN'), ('StreetNamePostType', 'STREET')],
-          [('AddressNumber', '179'), ('StreetName', 'MEDFORD'), ('StreetNamePostType', 'AVE')],
-          [('AddressNumber', '1004'), ('StreetNamePreType', 'HIGHWAY'), ('StreetName', 'A1A')],
-          [('AddressNumber', '20660'), ('StreetNamePreType', 'HWY'), ('StreetName', '63')],
-          [('AddressNumber', '903'), ('StreetNamePreDirectional', 'E'), ('StreetNamePreType', 'US'), ('StreetNamePreType', 'HIGHWAY'), ('StreetName', '80')],
-          [('AddressNumber', '54'), ('StreetNamePreDirectional', 'N'), ('StreetName', 'GROESBECK')],
-          [('USPSBoxType', 'P'), ('USPSBoxType', 'O'), ('USPSBoxType', 'BOX'), ('USPSBoxID', '500029')],
-          [('AddressNumber', '2675'), ('StreetName', '100TH'), ('StreetNamePostType', 'STREET')],
-          [('AddressNumber', '54'), ('StreetNamePreDirectional', 'N'), ('StreetName', 'GROESBECK')],
-          [('AddressNumber', '2402'), ('StreetName', 'BROCK'), ('StreetNamePostType', 'ST'), ('OccupancyIdentifier', 'A')],
-          [('AddressNumber', '2120'), ('StreetNamePreDirectional', 'EAST'), ('StreetName', '3900'), ('StreetNamePostDirectional', 'SOUTH')],
-          [('AddressNumber', '635'), ('StreetNamePreType', 'S'), ('StreetName', 'TROOPER'), ('StreetNamePostType', 'RD')]
+          [('2930', 'AddressNumber'),  ('WATERFRONT', 'StreetName'),      ('PARKWAY', 'StreetNamePostType')],
+          [('843', 'AddressNumber'),   ('SEBASTIAN', 'StreetName'),       ('STREET', 'StreetNamePostType')],
+          [('179', 'AddressNumber'),   ('MEDFORD', 'StreetName'),         ('AVE', 'StreetNamePostType')],
+          [('1004', 'AddressNumber'),  ('HIGHWAY', 'StreetNamePreType'),  ('A1A', 'StreetName')],
+          [('20660', 'AddressNumber'), ('HWY', 'StreetNamePreType'),      ('63', 'StreetName')],
+          [('903', 'AddressNumber'),   ('E', 'StreetNamePreDirectional'), ('US', 'StreetNamePreType'), ('HIGHWAY', 'StreetNamePreType'), ('80', 'StreetName')],
+          [('54', 'AddressNumber'),    ('N', 'StreetNamePreDirectional'), ('GROESBECK', 'StreetName')],
+          [('P', 'USPSBoxType'),       ('O', 'USPSBoxType'), ('BOX', 'USPSBoxType'), ('500029', 'USPSBoxID')],
+          [('2675', 'AddressNumber'),  ('100TH', 'StreetName'), ('STREET', 'StreetNamePostType')],
+          [('54', 'AddressNumber'),    ('N', 'StreetNamePreDirectional'), ('GROESBECK', 'StreetName')],
+          [('2402', 'AddressNumber'),  ('BROCK', 'StreetName'), ('ST', 'StreetNamePostType'), ('A', 'OccupancyIdentifier')],
+          [('2120', 'AddressNumber'),  ('EAST', 'StreetNamePreDirectional'), ('3900', 'StreetName'), ('SOUTH', 'StreetNamePostDirectional')],
+          [('635', 'AddressNumber'),   ('S', 'StreetNamePreType'), ('TROOPER', 'StreetName'), ('RD', 'StreetNamePostType')]
          ]
 
 
