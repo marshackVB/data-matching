@@ -20,7 +20,7 @@ labels_idx = [i for i, v in enumerate(labels)]
 all_labels = [[label for token, label in address] for address in labels]
 all_tokens = [[token for token, label in address] for address in labels]
 
-all_tokens_features = [addr2features(address) for address in all_tokens]
+all_tokens_features = [Parser.addr2features(address) for address in all_tokens]
 
 # Randomly choose index location as the test set
 testing_idx = np.random.choice(labels_idx, 30, replace=False)
@@ -38,8 +38,8 @@ x_test = [[addr[0] for addr in address] for address in testing_labels]
 y_test = [[addr[1] for addr in address] for address in testing_labels]
 
 # Calculate the features
-x_train_features = [addr2features(address) for address in x_train]
-x_test_features = [addr2features(address) for address in x_test]
+x_train_features = [Parser().addr2features(address) for address in x_train]
+x_test_features = [Parser().addr2features(address) for address in x_test]
 
 
 # Train the model
@@ -64,23 +64,26 @@ print(metrics.flat_classification_report(
     y_test, y_pred, labels=label_types, digits=3))
 
 # Model fit statistics
-
+"""
                            precision    recall  f1-score   support
 
-            AddressNumber      1.000     1.000     1.000        27
-        StreetNamePreType      1.000     1.000     1.000        10
-               StreetName      1.000     1.000     1.000        30
-       StreetNamePostType      1.000     0.941     0.970        17
- StreetNamePreDirectional      1.000     1.000     1.000         7
-            OccupancyType      0.800     0.571     0.667         7
-      OccupancyIdentifier      0.833     1.000     0.909        10
-              USPSBoxType      1.000     1.000     1.000         1
-                USPSBoxID      1.000     1.000     1.000         1
-StreetNamePostDirectional      0.000     0.000     0.000         0
-           SubaddressType      1.000     1.000     1.000         1
-     SubaddressIdentifier      1.000     1.000     1.000         1
+            AddressNumber       1.00      1.00      1.00       119
+        StreetNamePreType       0.93      0.98      0.95        41
+               StreetName       1.00      0.98      0.99       137
+       StreetNamePostType       1.00      0.99      0.99        73
+ StreetNamePreDirectional       0.98      1.00      0.99        40
+            OccupancyType       0.94      1.00      0.97        16
+      OccupancyIdentifier       0.98      1.00      0.99        40
+              USPSBoxType       1.00      1.00      1.00        19
+                USPSBoxID       1.00      1.00      1.00        10
+StreetNamePostDirectional       1.00      0.90      0.95        10
+           SubaddressType       1.00      1.00      1.00         3
+     SubaddressIdentifier       1.00      1.00      1.00         3
 
-              avg / total      0.973     0.964     0.966       112
+                 accuracy                           0.99       511
+                macro avg       0.99      0.99      0.99       511
+             weighted avg       0.99      0.99      0.99       511
+"""
 
 
 # Fit model on all data (Final model)
@@ -92,13 +95,8 @@ crf = sklearn_crfsuite.CRF(
     all_possible_transitions=True)
 
 crf.fit(all_tokens_features, all_labels)
-y_pred = crf.predict(all_tokens_features)
 
-print(metrics.flat_classification_report(
-    all_labels, y_pred, labels=label_types, digits=2))
-
-
-pickle.dump(crf, open("/parser/cfr_model.p", 'wb'))
+pickle.dump(crf, open("./address_parser/cfr_model.p", 'wb'))
 
 
 def get_pred_proba(address):
