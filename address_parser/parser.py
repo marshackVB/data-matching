@@ -10,8 +10,9 @@ import pickle
 import os
 from address_parser.labels import STREET_NAMES, DIRECTIONS
 
-model_path = os.path.dirname(__file__)
-crf = pickle.load(open(model_path + '/crf_model.p', 'rb'))
+# This file doesnt exist currentl
+#model_path = os.path.dirname(__file__)
+crf = pickle.load(open(model_path + './address_parser/crf_model.p', 'rb'))
 
 class Parser():
 
